@@ -1,0 +1,27 @@
+{% extends "menu.html" %}
+
+{% block pagename %}Каталог игр{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block h1 %}
+    <h1>Выбери игру для себя</h1>
+{% endblock %}
+
+
+{% block content %}
+<ul>
+    {% for game in games %}
+    <li>
+        {{ game.name }} - {{ game.price }} руб.
+        <button style="display: inline; margin-left: 10px;">Купить</button>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block return %}
+    {{ block.super }}
+{% endblock %}
